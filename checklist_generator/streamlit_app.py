@@ -13,6 +13,7 @@ import pdfplumber
 from io import BytesIO
 from typing import Dict, List, Optional
 from dotenv import load_dotenv
+import hashlib
 
 # Import local modules
 from models import ChecklistItem, MutualFundChecklist, ChecklistEvaluation, DocumentEvaluation
@@ -24,8 +25,8 @@ from rag_evaluator import create_document_embedding, batch_evaluate_with_rag
 load_dotenv()
 
 # Default paths
-DEFAULT_CHECKLIST_PATH = "../circular_evals/mutual_fund_disclosure_checklist.json"
-OUTPUT_DIR = "../circular_evals"
+DEFAULT_CHECKLIST_PATH = "Domspec/mutual_fund_disclosure_checklist.json"
+OUTPUT_DIR = "Domspec"
 
 
 def ensure_output_dir(dir_path: str):
@@ -128,13 +129,15 @@ def evaluate_document_with_rag(document_text: str, checklist: MutualFundChecklis
     """Evaluate document against checklist using RAG approach (with batching)"""
     evaluation = DocumentEvaluation()
     
-    # Generate a unique document ID
-    doc_id = str(uuid.uuid4())
-    doc_title = "Mutual Fund Document"
+    # Generate a document ID based on content hash rather than random UUID
+    doc_id = hashlib.md5(document_text[:5000].encode('utf-8')).hexdigest()[:32]
+    doc_title = f"Mutual Fund Document {doc_id}"
     
     # Show embedding progress
     with st.spinner("Creating document embeddings... This may take a minute."):
-        create_document_embedding(doc_id, doc_title, document_text)
+        embedding_result = create_document_embedding(doc_id, doc_title, document_text)
+        if embedding_result["status"] == "reused":
+            st.success("Reusing existing document embeddings - skipping embedding creation.")
     
     # Show progress bar
     progress_bar = st.progress(0)
@@ -152,9 +155,9 @@ def evaluate_document_with_rag(document_text: str, checklist: MutualFundChecklis
         progress_bar.progress(batch_num / num_batches)
         status_text.text(f"Processing batch {batch_num}/{num_batches} ({min(batch_size, len(items_data) - i)} items)")
         
-        # Process batch
+        # Process batch with actual batch size (not forcing to 1)
         batch = items_data[i:i+batch_size]
-        batch_results = batch_evaluate_with_rag(doc_id, batch, batch_size=1)  # Process one by one within batch
+        batch_results = batch_evaluate_with_rag(doc_id, batch, batch_size=batch_size)
         all_results.extend(batch_results)
     
     # Create evaluation objects
@@ -278,7 +281,7 @@ def main():
     
     batch_size = 10
     if evaluation_method == "RAG-based (Faster)":
-        batch_size = st.sidebar.slider("Batch Size", 1, 20, 10)
+        batch_size = st.sidebar.slider("Batch Size", 1, 30, 10)
     
     # Filter by category if available
     categories = []

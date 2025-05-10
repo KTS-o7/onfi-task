@@ -3,7 +3,7 @@ import time
 import json
 from typing import List, Dict, Any, Optional, Union
 from dotenv import load_dotenv
-from groq import Groq
+# from groq import Groq  # Commented out as per request
 
 # Import Pydantic models
 from pydantic import BaseModel, Field, ValidationError
@@ -12,37 +12,54 @@ from models import ChecklistItem, ChecklistEvaluation
 # Load environment variables
 load_dotenv()
 
-# Initialize Groq client
-groq_api_key = os.getenv("GROQ_API_KEY")
-groq_client = Groq(api_key=groq_api_key)
+# Initialize Groq client - Commented out
+# groq_api_key = os.getenv("GROQ_API_KEY")
+# groq_client = Groq(api_key=groq_api_key)
 
-# Initialize Gemini client through OpenAI compatible client
+# Initialize Gemini client through OpenAI compatible client - Commented out
 from openai import OpenAI
 
-gemini_api_key = os.getenv("GEMINI_API_KEY")
-gemini_client = OpenAI(
-    api_key=gemini_api_key,
-    base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
+# gemini_api_key = os.getenv("GEMINI_API_KEY")
+# gemini_client = OpenAI(
+#     api_key=gemini_api_key,
+#     base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
+# )
+
+# Initialize OpenAI client
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL")
+OPENAI_MODEL = os.getenv("OPENAI_MODEL")
+OPENAI_EMBEDDING_MODEL = os.getenv("OPENAI_EMBEDDING_MODEL")
+
+openai_client = OpenAI(
+    api_key=OPENAI_API_KEY,
+    base_url=OPENAI_BASE_URL
 )
 
-# Model configurations
-GROQ_MODEL = os.getenv("LLM_GROQ_LARGE", "llama-3.3-70b-versatile")
-GEMINI_MODEL = os.getenv("LLM_GEMINI_LARGE", "gemini-2.0-flash")
+# Model configurations - Commented out unused models
+# GROQ_MODEL = os.getenv("LLM_GROQ_LARGE", "llama-3.3-70b-versatile")
+# GEMINI_MODEL = os.getenv("LLM_GEMINI_LARGE", "gemini-2.0-flash")
 
-# Rate limits (per minute)
-GROQ_RPM = 30
-GEMINI_RPM = 15
+# Rate limits (per minute) - Commented out unused models
+# GROQ_RPM = 30
+# GEMINI_RPM = 15
 
-# Token limits
-GROQ_TPM = 12000
-GROQ_TPD = 100000
-GEMINI_TPM = 1000000
+# Token limits - Commented out unused models
+# GROQ_TPM = 12000
+# GROQ_TPD = 100000
+# GEMINI_TPM = 1000000
 
-# Tracking usage
-last_groq_call = 0
-last_gemini_call = 0
-groq_calls_this_minute = 0
-gemini_calls_this_minute = 0
+# OpenAI limits
+OPENAI_RPM = 100 # no limit
+OPENAI_TPM = 100000000 # no limit
+
+# Tracking usage - Commented out unused models
+# last_groq_call = 0
+# last_gemini_call = 0
+# groq_calls_this_minute = 0
+# gemini_calls_this_minute = 0
+last_openai_call = 0
+openai_calls_this_minute = 0
 
 
 # Define Pydantic models for structured extraction
@@ -75,18 +92,13 @@ class RAGEvaluationResponse(BaseModel):
 
 def reset_rate_limits_if_needed():
     """Reset call counters if a minute has passed."""
-    global last_groq_call, last_gemini_call
-    global groq_calls_this_minute, gemini_calls_this_minute
+    global last_openai_call, openai_calls_this_minute
     
     current_time = time.time()
     
-    # Reset Groq counters if a minute has passed
-    if current_time - last_groq_call >= 60:
-        groq_calls_this_minute = 0
-    
-    # Reset Gemini counters if a minute has passed
-    if current_time - last_gemini_call >= 60:
-        gemini_calls_this_minute = 0
+    # Reset OpenAI counters if a minute has passed
+    if current_time - last_openai_call >= 60:
+        openai_calls_this_minute = 0
 
 
 def preprocess_json_response(json_data: Dict, schema_model=None) -> Union[Dict, Any]:
@@ -156,19 +168,31 @@ def preprocess_json_response(json_data: Dict, schema_model=None) -> Union[Dict, 
     return json_data
 
 
-def call_groq_with_structure(prompt: str, system_prompt: Optional[str] = None, schema_model=None) -> Any:
-    """Call Groq API with rate limiting and structured output using Pydantic."""
-    global last_groq_call, groq_calls_this_minute
+# Commented out Groq function
+# def call_groq_with_structure(prompt: str, system_prompt: Optional[str] = None, schema_model=None) -> Any:
+#     """Call Groq API with rate limiting and structured output using Pydantic."""
+#     # Implementation commented out
+
+
+# Commented out Gemini function
+# def call_gemini_with_structure(prompt: str, system_prompt: Optional[str] = None, schema_model=None) -> Any:
+#     """Call Gemini API with rate limiting and structured output using Pydantic."""
+#     # Implementation commented out
+
+
+def call_openai_with_structure(prompt: str, system_prompt: Optional[str] = None, schema_model=None) -> Any:
+    """Call OpenAI API with rate limiting and structured output using Pydantic."""
+    global last_openai_call, openai_calls_this_minute
     
     reset_rate_limits_if_needed()
     
     # Check if we've hit the rate limit
-    if groq_calls_this_minute >= GROQ_RPM:
-        wait_time = 60 - (time.time() - last_groq_call)
+    if openai_calls_this_minute >= OPENAI_RPM:
+        wait_time = 60 - (time.time() - last_openai_call)
         if wait_time > 0:
-            print(f"Waiting {wait_time:.1f}s for Groq rate limit...")
+            print(f"Waiting {wait_time:.1f}s for OpenAI rate limit...")
             time.sleep(wait_time)
-            groq_calls_this_minute = 0
+            openai_calls_this_minute = 0
     
     # Prepare messages
     messages = []
@@ -177,109 +201,72 @@ def call_groq_with_structure(prompt: str, system_prompt: Optional[str] = None, s
     messages.append({"role": "user", "content": prompt})
     
     try:
-        # Call API with JSON response format
-        response = groq_client.chat.completions.create(
-            model=GROQ_MODEL,
-            messages=messages,
-            temperature=0.2,
-            response_format={"type": "json_object"}
-        )
-        
-        # Update tracking
-        last_groq_call = time.time()
-        groq_calls_this_minute += 1
-        
-        # Parse the JSON response
-        response_content = response.choices[0].message.content
-        json_data = json.loads(response_content)
-        
-        # Preprocess and validate against schema if provided
+        # For OpenAI client, try to use the parse method for structured output
         if schema_model:
-            result = preprocess_json_response(json_data, schema_model)
-            return result
-        
-        return json_data
-    except json.JSONDecodeError as e:
-        print(f"Error parsing JSON from Groq: {e}")
-        if schema_model:
-            # Return empty instance of schema model
-            return schema_model()
-        return {}
-    except ValidationError as e:
-        print(f"Error validating Groq response against schema: {e}")
-        if schema_model:
-            return schema_model()
-        return {}
-    except Exception as e:
-        print(f"Error calling Groq: {e}")
-        if schema_model:
-            return schema_model()
-        return {}
-
-
-def call_gemini_with_structure(prompt: str, system_prompt: Optional[str] = None, schema_model=None) -> Any:
-    """Call Gemini API with rate limiting and structured output using Pydantic."""
-    global last_gemini_call, gemini_calls_this_minute
-    
-    reset_rate_limits_if_needed()
-    
-    # Check if we've hit the rate limit
-    if gemini_calls_this_minute >= GEMINI_RPM:
-        wait_time = 60 - (time.time() - last_gemini_call)
-        if wait_time > 0:
-            print(f"Waiting {wait_time:.1f}s for Gemini rate limit...")
-            time.sleep(wait_time)
-            gemini_calls_this_minute = 0
-    
-    try:
-        # For OpenAI compatible client, use the parse method
-        if schema_model:
-            messages = []
-            if system_prompt:
-                messages.append({"role": "system", "content": system_prompt})
-            messages.append({"role": "user", "content": prompt})
-            
-            # Use parse method for structured output
-            completion = gemini_client.beta.chat.completions.parse(
-                model=GEMINI_MODEL,
-                messages=messages,
-                response_format=schema_model,
-            )
-            
-            # Update tracking
-            last_gemini_call = time.time()
-            gemini_calls_this_minute += 1
-            
-            return completion.choices[0].message.parsed
+            try:
+                # Use parse method for structured output if available
+                completion = openai_client.beta.chat.completions.parse(
+                    model=OPENAI_MODEL,
+                    messages=messages,
+                    response_format=schema_model,
+                )
+                
+                # Update tracking
+                last_openai_call = time.time()
+                openai_calls_this_minute += 1
+                
+                return completion.choices[0].message.parsed
+            except (AttributeError, NotImplementedError):
+                # Fallback to regular completion with JSON format if parse is not available
+                completion = openai_client.chat.completions.create(
+                    model=OPENAI_MODEL,
+                    messages=messages,
+                    response_format={"type": "json_object"},
+                    temperature=0.2
+                )
+                
+                # Update tracking
+                last_openai_call = time.time()
+                openai_calls_this_minute += 1
+                
+                # Parse JSON response
+                response_content = completion.choices[0].message.content
+                json_data = json.loads(response_content)
+                
+                # Preprocess before returning
+                result = preprocess_json_response(json_data, schema_model)
+                return result
         else:
             # Regular chat completion without structure
-            messages = []
-            if system_prompt:
-                messages.append({"role": "system", "content": system_prompt})
-            messages.append({"role": "user", "content": prompt})
-            
-            completion = gemini_client.chat.completions.create(
-                model=GEMINI_MODEL,
+            completion = openai_client.chat.completions.create(
+                model=OPENAI_MODEL,
                 messages=messages,
-                response_format={"type": "json_object"}
+                response_format={"type": "json_object"},
+                temperature=0.2
             )
             
             # Update tracking
-            last_gemini_call = time.time()
-            gemini_calls_this_minute += 1
+            last_openai_call = time.time()
+            openai_calls_this_minute += 1
             
             # Parse JSON response
             response_content = completion.choices[0].message.content
             json_data = json.loads(response_content)
             
-            # Preprocess before returning
-            if schema_model:
-                result = preprocess_json_response(json_data, schema_model)
-                return result
-            
             return json_data
+    except json.JSONDecodeError as e:
+        print(f"Error parsing JSON from OpenAI: {e}")
+        if schema_model:
+            # Return empty instance of schema model
+            return schema_model()
+        return {}
+    except ValidationError as e:
+        print(f"Error validating OpenAI response against schema: {e}")
+        if schema_model:
+            return schema_model()
+        return {}
     except Exception as e:
-        print(f"Error calling Gemini: {e}")
+        print(f"Error calling OpenAI: {e}")
         if schema_model:
             return schema_model()
         return {}
@@ -287,15 +274,9 @@ def call_gemini_with_structure(prompt: str, system_prompt: Optional[str] = None,
 
 def extract_requirements_from_text(text: str, page_range: str) -> Dict:
     """
-    Extract disclosure requirements from text.
-    Alternates between Groq and Gemini to maximize throughput.
+    Extract disclosure requirements from text using OpenAI.
     """
-    global groq_calls_this_minute, gemini_calls_this_minute
-    
     reset_rate_limits_if_needed()
-    
-    # Choose which API to use based on current usage
-    use_groq = groq_calls_this_minute < gemini_calls_this_minute
     
     system_prompt = """
     You are an expert in mutual fund regulations and compliance. Your task is to extract disclosure requirements from SEBI and AMFI regulatory circulars.
@@ -321,26 +302,13 @@ def extract_requirements_from_text(text: str, page_range: str) -> Dict:
     """
     
     try:
-        if use_groq:
-            result = call_groq_with_structure(prompt, system_prompt, ChecklistItemsExtract)
-        else:
-            result = call_gemini_with_structure(prompt, system_prompt, ChecklistItemsExtract)
+        # Use OpenAI for extraction
+        result = call_openai_with_structure(prompt, system_prompt, ChecklistItemsExtract)
         
         if result and hasattr(result, 'items'):
             return result.model_dump()
         
-        # Fallback if the chosen API failed
-        print(f"Initial extraction with {'Groq' if use_groq else 'Gemini'} failed, trying alternative")
-        
-        if use_groq:
-            result = call_gemini_with_structure(prompt, system_prompt, ChecklistItemsExtract)
-        else:
-            result = call_groq_with_structure(prompt, system_prompt, ChecklistItemsExtract)
-        
-        if result and hasattr(result, 'items'):
-            return result.model_dump()
-        
-        # If both failed, return empty checklist
+        # If failed, return empty checklist
         return {"items": []}
     except Exception as e:
         print(f"Error extracting requirements: {e}")
@@ -349,8 +317,7 @@ def extract_requirements_from_text(text: str, page_range: str) -> Dict:
 
 def consolidate_checklist(raw_extractions: List[Dict]) -> Dict:
     """
-    Consolidate multiple checklist extracti// ... existing code ...ns into a single unified checklist.
-    Uses Gemini for primary processing due to potential need for larger context window.
+    Consolidate multiple checklist extractions into a single unified checklist using OpenAI.
     """
     system_prompt = """
     You are an expert in mutual fund regulations and compliance. Your task is to consolidate multiple extracted disclosure requirements into a unified checklist.
@@ -379,20 +346,13 @@ def consolidate_checklist(raw_extractions: List[Dict]) -> Dict:
     """
     
     try:
-        # Use Gemini for consolidation due to potentially larger context
-        result = call_gemini_with_structure(prompt, system_prompt, ChecklistItemsExtract)
+        # Use OpenAI for consolidation
+        result = call_openai_with_structure(prompt, system_prompt, ChecklistItemsExtract)
         
         if result and hasattr(result, 'items'):
             return result.model_dump()
         
-        # Fallback to Groq if Gemini failed
-        print("Gemini consolidation failed, trying Groq as fallback")
-        result = call_groq_with_structure(prompt, system_prompt, ChecklistItemsExtract)
-        
-        if result and hasattr(result, 'items'):
-            return result.model_dump()
-        
-        # If both failed, return empty items list
+        # If failed, return empty items list
         return {"items": []}
     except Exception as e:
         print(f"Error consolidating checklist: {e}")
@@ -401,15 +361,9 @@ def consolidate_checklist(raw_extractions: List[Dict]) -> Dict:
 
 def evaluate_document_against_checklist(document_text: str, checklist_item: Dict) -> Dict:
     """
-    Evaluate a document against a single checklist item.
-    Alternates between Groq and Gemini to maximize throughput.
+    Evaluate a document against a single checklist item using OpenAI.
     """
-    global groq_calls_this_minute, gemini_calls_this_minute
-    
     reset_rate_limits_if_needed()
-    
-    # Choose which API to use based on current usage
-    use_groq = groq_calls_this_minute < gemini_calls_this_minute
     
     system_prompt = """
     You are an expert in mutual fund regulations and compliance. 
@@ -437,26 +391,13 @@ def evaluate_document_against_checklist(document_text: str, checklist_item: Dict
     """
     
     try:
-        if use_groq:
-            result = call_groq_with_structure(prompt, system_prompt, DocumentComplianceExtract)
-        else:
-            result = call_gemini_with_structure(prompt, system_prompt, DocumentComplianceExtract)
+        # Use OpenAI for evaluation
+        result = call_openai_with_structure(prompt, system_prompt, DocumentComplianceExtract)
         
         if result and hasattr(result, 'findings_summary') and hasattr(result, 'citations'):
             return result.model_dump()
         
-        # Fallback if the chosen API failed
-        print(f"Initial evaluation with {'Groq' if use_groq else 'Gemini'} failed, trying alternative")
-        
-        if use_groq:
-            result = call_gemini_with_structure(prompt, system_prompt, DocumentComplianceExtract)
-        else:
-            result = call_groq_with_structure(prompt, system_prompt, DocumentComplianceExtract)
-        
-        if result and hasattr(result, 'findings_summary') and hasattr(result, 'citations'):
-            return result.model_dump()
-        
-        # If both failed, return default values
+        # If failed, return default values
         return {
             "findings_summary": "Could not evaluate compliance",
             "citations": "No citations found"
