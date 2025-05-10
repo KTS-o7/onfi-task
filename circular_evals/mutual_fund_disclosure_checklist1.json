@@ -1,0 +1,690 @@
+[
+  {
+    "checklist_title": "Filing of Offer Documents",
+    "checklist_description": "All offer documents of Mutual Fund schemes must be filed with SEBI as per the regulations, which include filing draft SIDs for public availability on SEBI's website for 21 working days. AMCs must submit a soft copy in HTML or PDF format and ensure content consistency between electronic and physical copies.",
+    "rationale": "Ensuring transparency and accountability by allowing public access to draft offer documents and maintaining consistency between different formats, aiding investor decision-making.",
+    "page_numbers": "10",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Updation of SID",
+    "checklist_description": "The SID shall be updated within six months from the end of the half-year, based on relevant data as at the end of September and March, and must be filed with SEBI in PDF format within 7 days of updation.",
+    "rationale": "Regular updation ensures that the information available to investors is current and reflects the latest financial and operational status of the fund, aiding informed investment decisions.",
+    "page_numbers": "13",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Disclosure of Fundamental Attribute Changes",
+    "checklist_description": "In case of changes in fundamental attributes of the scheme, an addendum to the SID must be issued and displayed on AMC website immediately, with a public notice in newspapers. The SID must be revised post-exit option period.",
+    "rationale": "This requirement ensures that investors are informed of significant changes that might affect their investment, providing them an informed basis for continued or new investment decisions.",
+    "page_numbers": "14",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Certification of New Scheme Uniqueness",
+    "checklist_description": "Trustees must certify in the SID that the new scheme/fund is not a minor modification of existing ones, including the date of approval by the trustees.",
+    "rationale": "It encourages innovation in fund offerings and ensures investors are not misled by repackaged products, enhancing market integrity.",
+    "page_numbers": "15",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Inclusion of Standard Observations",
+    "checklist_description": "All Standard Observations mandated by SEBI must be incorporated into the SID and SAI, and their page numbers clearly highlighted when filed with SEBI.",
+    "rationale": "To ensure a minimum level of disclosure, facilitating comparability and comprehensive assessment of different mutual fund schemes by investors.",
+    "page_numbers": "15",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Benchmark Structure Disclosure",
+    "checklist_description": "Mutual Funds are required to disclose a two-tiered benchmark structure for specific categories of schemes. The first tier is a broad market index reflective of the scheme category, while the second tier, which is optional, should be indicative of the investment style or strategy of the fund manager within the category. All benchmarks must be Total Return Indices.",
+    "rationale": "This requirement aims to bring uniformity in benchmarks of mutual fund schemes, helping investors better evaluate the fund's performance against a relevant benchmark index.",
+    "page_numbers": "18-20",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Disclosure of Redemption Restriction Possibility",
+    "checklist_description": "Mutual Funds must publish information prominently regarding possible redemption restrictions in scheme-related documents. They must inform investors that redemptions could be restricted under exceptional circumstances for a period not exceeding 10 working days in any 90-day period. Detailed conditions under which restrictions might be imposed and the procedures followed should be included.",
+    "rationale": "To ensure transparency and protect investor interests by clearly communicating the conditions and procedures for possible restrictions on fund redemptions.",
+    "page_numbers": "22-23",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Disclosure of NFO Terms",
+    "checklist_description": "NFOs must disclose in their documents that, apart from ELSS schemes, they will remain open for a minimum of three to fifteen days. Furthermore, any proceeds from NFOs invested in triparty repo or treasury bills before closure must not incur investment management fees and any appreciation must be passed to investors.",
+    "rationale": "This requirement ensures transparency in terms of the subscription period and financial handling of proceeds during an NFO, providing investors clarity on the terms before participation.",
+    "page_numbers": "20-21",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Fundamental Attributes Disclosure",
+    "checklist_description": "Mutual Funds must maintain and disclose 'Fundamental Attributes' in scheme documents, which include scheme type (open/close-ended), main investment objectives, tentative asset allocation patterns, liquidity provisions, and fees or expenses. Changes to these attributes require prior SEBI comments and ensure attributes are not changed without due process and communication.",
+    "rationale": "To maintain transparency in mutual fund schemes and ensure stability in the nature of the fund, providing investors with clear expectations for the fund's management and operations.",
+    "page_numbers": "24-25",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Monthly Stress Testing for Liquid and Money Market Schemes",
+    "checklist_description": "AMCs must carry out monthly internal stress testing for all Liquid Fund and Money Market Mutual Fund Schemes, covering parameters such as interest rate risk, credit risk, and liquidity & redemption risk. The results of these tests should be reported to trustees, especially if any vulnerabilities are found.",
+    "rationale": "To standardize risk management practices across the industry and provide early warnings regarding fund health, reducing the potential impact of market changes on investors.",
+    "page_numbers": "92-93",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Internal Credit Risk Assessment Policy",
+    "checklist_description": "Mutual Funds need an internal credit risk assessment policy to conduct in-house credit checks on investments, beyond relying on external ratings. This policy should include mechanisms for generating early warning signals for deteriorating credit ratings, which are to be reported to trustees.",
+    "rationale": "To reduce reliance on external rating agencies and allow funds to manage credit risk proactively, ensuring better portfolio health and protection for investors.",
+    "page_numbers": "94",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Creation of Segregated Portfolio Upon Credit Events",
+    "checklist_description": "AMCs can create a segregated portfolio when certain credit events at issuer level occur, such as downgrading of a debt instrument to below investment grade. The policy and process for segregating portfolios should be disclosed in the SID and SAI.",
+    "rationale": "To ensure fair treatment to all investors during credit events by minimizing liquidity risk and managing credit exposure effectively.",
+    "page_numbers": "95-97",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Disclosure of Segregated Portfolios",
+    "checklist_description": "Disclose segregated portfolios in all related mutual fund documentation, including portfolio disclosures, monthly and half-yearly reports, and annual reports. This should include information about NAV of both main and segregated portfolios, scheme performance post-segregation, and recovery notes.",
+    "rationale": "To ensure investors have a transparent view of the impacts of segregation on their investments, supporting informed investment decisions and trust in fund management.",
+    "page_numbers": "99-100",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Reporting and Compliance for Segregated Portfolios",
+    "checklist_description": "AMCs are required to report any creation of segregated portfolios, timely valuation adjustments, and process related to subscriptions and redemptions during credit events to SEBI and Trustees.",
+    "rationale": "For regulatory compliance and to provide assurance to investors about the fair processing of their investments and handling of fund assets.",
+    "page_numbers": "98",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Disclosure of Segregated Portfolio Recovery to Investors",
+    "checklist_description": "Status updates on the recovery of investments in a segregated portfolio must be provided to investors at the time of recovery and when writing-off the segregated securities.",
+    "rationale": "This disclosure ensures transparency in the process of recovery and writing-off investments, maintaining investor awareness and trust in their investments.",
+    "page_numbers": "101",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Disclosure of Segregated Portfolio Provision in SID",
+    "checklist_description": "Mutual Funds must disclose the existence and provision of a segregated portfolio in the Scheme Information Document (SID) for existing schemes with a provision for segregated portfolios as of December 28, 2018.",
+    "rationale": "Ensures that investors are aware of the provision for segregation of portfolios in their investment schemes, maintaining informed decision-making.",
+    "page_numbers": "103",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Disclosure of Cyber Security and Resilience Measures",
+    "checklist_description": "Disclose the framework and components of the cyber security and cyber resilience measures in place, including compliance with SEBI's circulars and advisories related to cyber security.",
+    "rationale": "With advancing technology and increasing cyber threats, robust cyber security measures are crucial to protect investor data and maintain market integrity.",
+    "page_numbers": "106",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Quarterly Reporting of AI/ML Use in Mutual Funds",
+    "checklist_description": "Mutual Funds must submit a quarterly report using the prescribed AI/ML reporting format on AI/ML applications and systems used or offered, including submissions to AMFI within 15 days of quarter-end and a consolidated report by AMFI to SEBI within 30 days.",
+    "rationale": "This requirement ensures that SEBI is informed of the implementation of AI/ML technologies, helping maintain transparency and prevent potential misrepresentation in AI/ML-driven financial product offerings to investors.",
+    "page_numbers": "109",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Disclosure of Swing Pricing Provisions",
+    "checklist_description": "Disclosure of swing pricing framework provisions in the Scheme Information Document (SID) and detailed disclosures in the Statement of Additional Information (SAI).",
+    "rationale": "Clear disclosure of swing pricing mechanisms ensures investors understand how their returns may be affected by changes in pricing strategies, especially during market dislocations.",
+    "page_numbers": "110",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Mandatory Swing Factor Disclosure",
+    "checklist_description": "AMCs must implement the provision of mandatory swing factor for open-ended debt schemes, and update offer documents accordingly within three months from the specified start date.",
+    "rationale": "To ensure that all open-end debt schemes incorporate the provision of mandatory swing pricing to maintain transparency without considering it a Fundamental Attribute Change of the scheme under SEBI regulations.",
+    "page_numbers": "113",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Swing Pricing Framework Disclosure",
+    "checklist_description": "AMCs shall disclose clear information and illustrations in their SIDs on how the swing pricing framework is triggered, its impact, and the effect on NAV for investors.",
+    "rationale": "To ensure clarity and transparency for investors regarding the impact and mechanism of swing pricing on NAV.",
+    "page_numbers": "113",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "NAV Adjustment Disclosure",
+    "checklist_description": "Disclosures regarding the NAV adjusted for swing factor must be presented in a specified format in SIDs, scheme-wise annual reports, abridged summaries, and the AMC website, but only if swing pricing is applicable for the scheme.",
+    "rationale": "To provide transparent information on the performance impact due to swing pricing when applicable, ensuring investors are fully informed of pricing adjustments.",
+    "page_numbers": "114",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Portfolio Disclosure",
+    "checklist_description": "Mutual Funds/ AMCs must disclose the portfolio (including ISIN) as of the last day of the month or half-year for all schemes on their website and AMFI's website within 10 days from the close of the month/half-year in a user-friendly format. For debt schemes, disclosures are required fortnightly within 5 days.",
+    "rationale": "To maintain transparency and provide investors with up-to-date information about their investments, particularly in debt schemes where more frequent updates are crucial.",
+    "page_numbers": "115",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Email Distribution of Portfolio Statements",
+    "checklist_description": "Monthly and half-yearly statements of scheme portfolio must be emailed to unit holders with registered email addresses within 10 days from the month's/half-year's end.",
+    "rationale": "To ensure investors receive timely updates about their investment portfolio, maintaining transparency and engagement.",
+    "page_numbers": "115",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Bi-Annual Portfolio Advertisement",
+    "checklist_description": "AMCs must publish a bi-annual advertisement disclosing the hosting of half-yearly scheme portfolio statements on their and AMFI's websites. The ad must state how unit holders can request copies via SMS, phone, email, or letter. It should appear in at least two newspapers, one in English and one in Hindi.",
+    "rationale": "To inform investors about the availability of detailed portfolio information and how to access it, promoting transparency and access to information.",
+    "page_numbers": "115",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Portfolio Disclosure Requirement",
+    "checklist_description": "Mutual Funds/ AMCs are required to disclose the portfolio, including ISIN, as of the last day of the month or half-year on their respective websites and on AMFI's website within 10 days of month/half-year end. For debt schemes, disclosure is fortnightly within 5 days. The yield of the instrument must also be disclosed.",
+    "rationale": "To ensure transparency and timely availability of portfolio information to investors.",
+    "page_numbers": "115",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Email Portfolio Statements to Unit Holders",
+    "checklist_description": "Mutual Funds/ AMCs must email both the monthly and half-yearly statement of scheme portfolio to unit holders with registered email addresses within 10 days of month/half-year end.",
+    "rationale": "To keep investors informed about their holdings and portfolio changes.",
+    "page_numbers": "115",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Public Advertisement of Portfolio Statement Availability",
+    "checklist_description": "An advertisement must be published every half-year disclosing the hosting of the half-yearly statement of schemes' portfolio on the AMC and AMFI websites, along with communication modes for obtaining a physical or electronic copy of the statement.",
+    "rationale": "To ensure investors are aware of where and how they can access their portfolio statements.",
+    "page_numbers": "115",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Physical Portfolio Statement upon Request",
+    "checklist_description": "Provide a physical copy of the statement of the scheme portfolio at no cost upon specific request from a unit holder.",
+    "rationale": "To accommodate investors who prefer or require physical documentation.",
+    "page_numbers": "116",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Derivatives Disclosure in Portfolios",
+    "checklist_description": "Disclose the format for half-yearly derivative investments uniformly, include margin amounts under cash or bank balances, and disclose in half-yearly portfolio, annual report, or other disclosures.",
+    "rationale": "To standardize and clarify derivative disclosures, enhancing transparency.",
+    "page_numbers": "116",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Unaudited Half Yearly Financials Disclosure",
+    "checklist_description": "The unaudited half-yearly financial results must be displayed on AMFI's website at least 1 month before the half-year ends in a downloadable format.",
+    "rationale": "To ensure financial transparency and provide investors with timely financial information.",
+    "page_numbers": "116",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Annual Report Hosting Requirement",
+    "checklist_description": "Host scheme-wise annual reports on the AMC and AMFI websites, with a prominent link and physical copies available at registered offices at all times.",
+    "rationale": "To make financial information easily accessible to stakeholders and comply with the transparency mandate.",
+    "page_numbers": "117",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Email and Access Feature for Annual Reports",
+    "checklist_description": "Email annual reports or abridged summaries to registered email addresses; offer tools to view/download only portfolios for the schemes subscribed.",
+    "rationale": "To enhance accessibility and user-specific information delivery, primarily through electronic communication.",
+    "page_numbers": "117",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Annual Advertisement for Scheme Reports",
+    "checklist_description": "Publish an annual advertisement detailing the hosting of scheme-wise annual reports on AMC and AMFI websites, including modes to request physical or electronic copies.",
+    "rationale": "To ensure investors are informed annually about where they can access or request their required financial reports.",
+    "page_numbers": "118",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Offer Document Disclosures",
+    "checklist_description": "Disclose, in offer documents, the tenure of the fund manager managing the scheme, scheme's portfolio holdings via a web link, expense ratio of underlying schemes in FoF, and portfolio turnover ratio.",
+    "rationale": "To improve transparency and provide essential fund management and financial metrics to investors.",
+    "page_numbers": "122",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Website Dashboard for Scheme Information",
+    "checklist_description": "Provide a dashboard on the AMC website with key disclosures and performance information of each scheme in a comparable, downloadable, and machine-readable format.",
+    "rationale": "To centralize and ease access to scheme information, allowing for better investor decision-making.",
+    "page_numbers": "123",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Disclosure of AUM for Overnight and Liquid Schemes",
+    "checklist_description": "The AUM of overnight and liquid schemes must be disclosed on the AMFI website monthly, especially if there is a cumulative movement of more than 10% upwards or downwards from the previously disclosed AUM. This requirement includes an explanation with a 10% trigger limit footnote.",
+    "rationale": "This disclosure ensures transparency regarding the fund sizes and provides investors with information on significant changes in fund size, which could impact their investment decisions.",
+    "page_numbers": "125",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Annual Report Disclosure",
+    "checklist_description": "The annual report containing accounts of the AMC should be available on mutual fund websites immediately after Annual General Meeting approval and within four months of the financial year-end. It must be mentioned in the scheme's annual report that unitholders can request the annual report of the AMC, which should be available in machine-readable format.",
+    "rationale": "Ensures shareholders and potential investors have access to up-to-date and detailed financial information about the AMC, fostering transparency and informed investment decisions.",
+    "page_numbers": "125",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Executive Remuneration Disclosure",
+    "checklist_description": "The remuneration policies must be disclosed under a separate head 'Remuneration' on the MF/AMC website, including the names, designations, and remuneration of the CEO, CIO, COO, the top ten employees by remuneration, employees earning above certain thresholds, and the ratio of CEO's remuneration to the median of all employees.",
+    "rationale": "Transparency in executive remuneration promotes alignment of management interests with investor interests, reducing potential conflicts of interest.",
+    "page_numbers": "126-127",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Investor Complaints Disclosure",
+    "checklist_description": "Disclose details of all investor complaints received from any source on MF, AMFI websites, and in the Annual Reports. Monthly website updates are required by the 7th of the succeeding month. The report in annual reports should be reviewed by Trustees.",
+    "rationale": "Transparency in handling investor grievances encourages better fund management practices and builds trust with investors by showing the fund's commitment to resolving complaints.",
+    "page_numbers": "127",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Brokerage and Commission Disclosure",
+    "checklist_description": "The AMC must disclose brokerage and commission payments made to associates/related parties/group companies of sponsors or AMC in unaudited half-yearly financial results, abridged scheme-wise annual report, and the SAI in the prescribed format.",
+    "rationale": "Disclosing such payments ensures transparency in the transactions between the AMC and its associates, protecting investors against potential conflicts of interest or unfair practices.",
+    "page_numbers": "128-129",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Risk-O-Meter and Benchmark Disclosures",
+    "checklist_description": "Risk-o-meter details must be disclosed in all relevant materials, including promotional content and documents such as initial offering forms, Scheme Information Document (SID), Key Information Memorandum (KIM), and common application forms. It should include the scheme's risk-o-meter and benchmark risk-o-meter when the performance is disclosed relative to a benchmark.",
+    "rationale": "The risk-o-meter provides a standardized measure of scheme risk, aiding investors in making informed investment choices by understanding the associated risk levels.",
+    "page_numbers": "129-130",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Half-Yearly Report by Trustees",
+    "checklist_description": "Trustees must submit a half-yearly report covering all issues in the prescribed format along with any other relevant issues related to mutual fund operations. They may rely on reports from independent or internal auditors and must state compliance adequacy in the report.",
+    "rationale": "To ensure transparency in mutual fund operations and that trustees are satisfied with compliance systems.",
+    "page_numbers": "135",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Annual Information Return (AIR) Filing",
+    "checklist_description": "Mutual Funds must file an Annual Information Return (AIR) under section 285 BA of the Income Tax Act, reporting specified financial transactions electronically to the Income Tax Department, including PAN of transacting parties.",
+    "rationale": "To comply with income tax regulations and ensure accurate reporting of financial transactions.",
+    "page_numbers": "136",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Quarterly Data Submission to SEBI",
+    "checklist_description": "Submit daily data in a monthly file on a quarterly basis to SEBI, according to specified formats, within 10 calendar days from the quarter's end.",
+    "rationale": "To facilitate SEBI's surveillance and ensure compliance with mutual funds regulations.",
+    "page_numbers": "137",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Audit Committee Formation by Trustees",
+    "checklist_description": "Mutual funds must have an audit committee comprising of trustees, chaired by an Independent Trustee, to review internal audit systems and implement audit recommendations.",
+    "rationale": "To ensure oversight and rectify issues identified in internal and external audits as part of good governance practices.",
+    "page_numbers": "138",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Audit Committee Formation by AMCs",
+    "checklist_description": "AMCs must form an Audit Committee responsible for oversight of financial reporting, audit processes, internal controls, and compliance with laws specific to mutual fund operations.",
+    "rationale": "To maintain robust oversight over financial and compliance aspects of mutual fund operations.",
+    "page_numbers": "138",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Thinly Traded Securities Disclosure",
+    "checklist_description": "Mutual funds must disclose the criteria used to classify equity or equity-related securities as thinly traded based on trading value and volume. Additionally, they must disclose their method of identifying thinly traded securities using data from recognized stock exchanges or through their own analysis when exchange-provided data is unavailable.",
+    "rationale": "Ensures mutual funds apply consistent criteria for valuation, avoiding discrepancies and promoting transparency in assessing market liquidity and security valuation.",
+    "page_numbers": "Pages 216-217",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Below Investment Grade and Default Classification",
+    "checklist_description": "Funds must report and disclose when any security is classified as \"below investment grade\" or \"default,\" including any non-receipt of interest or principal payments. This includes prompt notification to valuation agencies and credit rating agencies.",
+    "rationale": "This disclosure is key to maintaining transparency and enabling informed assessment of fund risks by investors and regulatory bodies.",
+    "page_numbers": "Page 218",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Non-Traded and Thinly Traded Equity Securities Valuation",
+    "checklist_description": "For non-traded securities, mutual funds need to disclose the valuation methodology, including balance sheet assessment, industry average P/E ratio adjustments, illiquidity discounts, and procedures if financial statements are unavailable. For securities causing scheme exposure over 5%, independent valuation is required.",
+    "rationale": "Discloses valuation methods and ensures fairness and accuracy in security evaluation, reflecting real economic value and protecting investors.",
+    "page_numbers": "Pages 219-220",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Money Market and Debt Securities Valuation",
+    "checklist_description": "When valuing money market and debt securities, AMCs must disclose their adherence to the specified methodologies, including the transition from amortization-based to market-based valuations, procedures for new securities without available pricing, and details on the waterfall approach for security-level pricing.",
+    "rationale": "Ensures the valuation of securities reflects current market conditions and informs investors about pricing methods for transparency and accuracy.",
+    "page_numbers": "Pages 220-222",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Valuation Price Deviation Reporting",
+    "checklist_description": "Mutual funds must disclose any deviation from the valuation prices provided by official valuation agencies, including the rationale for such deviation, security details, and NAV impact of the deviation, reporting these to their Board and Trustees.",
+    "rationale": "This ensures accountability and transparency, protecting investors by informing them of any discretionary practices that impact asset valuation and scheme NAV.",
+    "page_numbers": "Page 225",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Disclosure of Deviation Rationale",
+    "checklist_description": "Mutual Funds must disclose the rationale for any deviation from the valuation methodologies for securities as outlined in regulatory guidelines. This includes the details of such deviations, like information about the security (ISIN, issuer name, rating, etc.), and the impact of the deviation on the scheme's NAV. These details must be accessible under a separate section on the AMC's website.",
+    "rationale": "To maintain transparency for investors about any deviation in the valuation of below investment grade securities.",
+    "page_numbers": "226-228",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Disclosure of Number of Deviations",
+    "checklist_description": "Mutual Funds must disclose the total number of deviation instances in their monthly and half-yearly portfolio statements. The disclosure should include an exact link to the section of their website where full details of these instances are available.",
+    "rationale": "To provide investors with a comprehensive overview of all deviations made from standard valuation practices.",
+    "page_numbers": "226",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Disclosure of Illiquid Securities",
+    "checklist_description": "AMCs need to disclose scheme-wise details about the total value of illiquid securities as on March 31 and September 30, including their percentage of net assets. These disclosures should be included in the Half Yearly Portfolios shared with unit holders.",
+    "rationale": "To provide transparency regarding the level of illiquid securities held within a mutual fund's portfolio.",
+    "page_numbers": "234-235",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Valuation of Unlisted Equity Shares",
+    "checklist_description": "For investments in unlisted equity shares, AMCs should follow a specific methodology for calculating and disclosing the Net Worth per share. This calculation should consider both scenarios of the existing share capital and potential dilution through options and warrants.",
+    "rationale": "To ensure uniformity in NAV calculation for mutual funds encompassing unlisted equity shares.",
+    "page_numbers": "235",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Compliance Reporting in CTRs and Half Yearly Reports",
+    "checklist_description": "Mutual Funds must indicate comments on compliance with the valuation methodology guidelines in their Compliance Test Reports (CTRs) and Half Yearly Reports filed with SEBI.",
+    "rationale": "Ensuring adherence to valuation methodology guidelines and fostering accountability in mutual fund operations is crucial for maintaining investor trust and regulatory integrity.",
+    "page_numbers": "237",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Daily Disclosure of Money Market and Debt Securities Transactions",
+    "checklist_description": "Mutual Funds must disclose all transactions details, including inter-scheme transfers, for money market and debt securities on a daily basis on their website and also forward these details to AMFI for consolidation and dissemination. The disclosures must be settlement date-wise, daily, with a 15-day time lag, and in a comparable, downloadable (spreadsheet) and machine-readable format.",
+    "rationale": "Regular and transparent disclosure aligns with the goal of enhancing visibility and uniformity in valuation across the mutual funds industry, thus protecting investor interests and market integrity.",
+    "page_numbers": "240, 241",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Disclosure of Fees and Expenses in Offer Document",
+    "checklist_description": "Trustees and Asset Management Companies must ensure that all expenses charged to a mutual fund scheme are clearly identified and disclosed in the offer document, ensuring these expenses comply with the regulatory limits provided in Regulation 52(6).",
+    "rationale": "Transparent disclosure of fees and expenses is essential for investors to make informed decisions, thereby ensuring fairness and compliance with regulatory standards.",
+    "page_numbers": "243",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Disclosure of Scheme-related Expenses and Commissions",
+    "checklist_description": "Asset Management Companies (AMCs) must disclose scheme-related expenses and commissions paid to distributors in the offer document. The expenses and commissions must be within regulatory limits and clearly attributed to the scheme itself, not paid from the books of other associated entities.",
+    "rationale": "To ensure transparency and prevent mis-selling, all expenses and commissions must be paid from the scheme within regulatory guidelines and not from other entities' books, except for very small expenses as specified by AMFI and SEBI guidelines.",
+    "page_numbers": "247",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Total Expense Ratio Disclosure",
+    "checklist_description": "AMCs are required to disclose the Total Expense Ratio (TER) daily on their website and AMFI's website in a downloadable spreadsheet format. Any change in the base TER must be communicated to investors via email or SMS at least three working days prior to the change.",
+    "rationale": "This disclosure ensures transparency in the fees charged to the investors, allowing them to be informed about any changes in the expenses they are subject to.",
+    "page_numbers": "246",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Disclosure on Geographical Penetration Efforts",
+    "checklist_description": "AMCs must disclose in the half-yearly trustee report to SEBI about the efforts taken to increase geographical penetration and details of new branch openings, especially beyond the top 30 cities.",
+    "rationale": "To monitor and encourage wider distribution and access to mutual fund schemes across diverse geographies, especially in areas beyond major urban centers.",
+    "page_numbers": "246",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Transparency in Commission Structure",
+    "checklist_description": "Trustees and AMCs must ensure all expenses under different heads like commission paid to distributors should not exceed regulatory limits. Full trail model of commission should be adopted without any upfront commission, except in specific cases.",
+    "rationale": "This measure aims to prevent mis-selling and promote long-term investment by discouraging upfront commission payments that might lead to undue influence over investor decisions.",
+    "page_numbers": "247-248",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Investor Education and Awareness Initiatives Disclosure",
+    "checklist_description": "AMCs should disclose investor education and awareness initiatives annually, and trustees should report these in the half-yearly report to SEBI. Any celebrity endorsements for the promotion of mutual funds should be approved by SEBI and should not promote individual schemes or AMCs.",
+    "rationale": "To ensure that investor education is prioritized and that any promotional activities are conducted with transparency and regulatory oversight, to avoid misleading promotions.",
+    "page_numbers": "250-252",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Prohibited Expenses Disclosure",
+    "checklist_description": "Certain expenses such as penalties, interest on delayed payment to unit holders, and general administrative expenses cannot be charged to the mutual fund schemes.",
+    "rationale": "To protect investors from bearing costs that are due to regulatory infractions or general operating expenses that do not directly benefit the mutual fund scheme.",
+    "page_numbers": "252",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Disclosure of Major Expenditure Items",
+    "checklist_description": "Mutual Funds must disclose each item of expenditure that accounts for more than 10% of the total expenditure in the accounts or notes of the schemes.",
+    "rationale": "Ensures transparency in how funds are managed and highlights significant costs impacting investors' returns.",
+    "page_numbers": "253",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "No Entry Load and Upfront Commission Disclosure",
+    "checklist_description": "Mutual Fund schemes should disclose that there will be no entry load, and the upfront commission to distributors will be paid directly by the investors after assessing service levels.",
+    "rationale": "Empowers investors to make informed financial decisions based on service level while ensuring no hidden charges or entry loads.",
+    "page_numbers": "255",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "No Load on Bonus and Reinvested Units",
+    "checklist_description": "AMCs must disclose in the scheme information document (SID) that no load will be charged on bonus units and units allocated due to the reinvestment of dividends.",
+    "rationale": "Prevents any hidden charges on bonus or reinvestment-related units, ensuring investor protection regarding charges.",
+    "page_numbers": "258",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Disclosure on Distribution from Capital",
+    "checklist_description": "Offer documents must notify that the amounts distributed may be from the investor's capital (Equalization Reserve), highlighting that it represents realized gains.",
+    "rationale": "Ensures investors are aware of potential capital depletion during distributions, supporting informed investment choices.",
+    "page_numbers": "261",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Segregation of Distribution Sources",
+    "checklist_description": "AMCs should ensure clear separation of income distribution (NAV appreciation) and capital distribution (Equalization Reserve) details in the Consolidated Account Statement to investors.",
+    "rationale": "Provides clarity and transparency concerning the sources of distributions from mutual fund investments, fostering informed decision-making.",
+    "page_numbers": "261",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Dividend Disclosure in Advertisements",
+    "checklist_description": "All advertisements must disclose dividends declared or paid in rupees per unit along with the face value of each unit of the scheme and the prevailing NAV at the time of dividend declaration.",
+    "rationale": "This ensures transparency and provides investors with clear information on the financial performance and actual returns from their investments.",
+    "page_numbers": "320",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Performance Disclosure in Advertisements",
+    "checklist_description": "All performance advertisements of mutual fund schemes must present performance in terms of CAGR for the past 1, 3, 5 years, and since inception. Additionally, point-to-point returns on a standard investment of Rs. 10,000 must also be provided.",
+    "rationale": "These requirements standardize how performance information is presented, making it easier for retail investors to understand and compare the performance of various schemes.",
+    "page_numbers": "321",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Plan Type and Expense Structure Disclosure",
+    "checklist_description": "Performance advertisements should mention if the performance is of a regular or direct plan and include a footnote that different plans have a different expense structure.",
+    "rationale": "This clarification helps investors understand the cost implications of choosing different plan types and promotes informed decision-making.",
+    "page_numbers": "321",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Disclosure of Fund Manager Changes",
+    "checklist_description": "If a mutual fund scheme has not been managed by the same fund manager for the entire period disclosed, this must be stated in a footnote in the advertisement.",
+    "rationale": "This disclosure informs investors of any changes in management that could have influenced the fund's performance, ensuring transparency and accountability.",
+    "page_numbers": "321, 323",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Performance Data Constraints for Newer Schemes",
+    "checklist_description": "For schemes existing for less than six months, performance data should not be advertised. Schemes existing more than six months but less than one year should report simple annualized growth rate for the past 6 months.",
+    "rationale": "This regulation prevents misleading performance claims by new funds, protecting potential investors from being swayed by potentially non-representative data.",
+    "page_numbers": "321",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Cross-scheme Performance Disclosure",
+    "checklist_description": "Advertisements must include performance data of all other schemes managed by the same fund manager in terms of CAGR for 1, 3, and 5 years or highlight the top 3 and bottom 3 schemes if more than six schemes are managed.",
+    "rationale": "Such comprehensive performance disclosure provides investors with a holistic view of a fund manager's capabilities and helps avoid selective reporting biases.",
+    "page_numbers": "323",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Performance Disclosure of Merged Schemes",
+    "checklist_description": "Post-merger, the disclosure of scheme performance depends on what features are retained. If the features remain similar, disclose weighted average performance; if features from one scheme are retained, disclose that scheme's performance.",
+    "rationale": "This ensures that investors have clarity on how the performance figures are derived post-merger, reflecting potential changes in investment strategy and risk profile.",
+    "page_numbers": "324-325",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Prohibition of Indicative Portfolio/Yield Disclosures",
+    "checklist_description": "Mutual Funds, AMCs, and distributors should not issue any communications regarding indicative portfolios or yields in any form. Compliance with this requirement must be monitored and reported to SEBI.",
+    "rationale": "This prohibits misleading marketing practices which might promise certain outcomes, preventing misinformation and protecting investor interests.",
+    "page_numbers": "326",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Redemption or Repurchase Proceeds Transfer Disclosure",
+    "checklist_description": "For specified mutual fund schemes, the transfer of redemption or repurchase proceeds to unitholders must occur within three working days from the date of redemption. For schemes investing at least 80% of total assets in permissible overseas investments, this transfer must occur within five working days. Mutual funds must disclose any exceptional circumstances where these timelines are not met, and the applicable timeframe for delayed transfers, as available on the AMFI website.",
+    "rationale": "Ensures investors receive funds timely and are informed about any possible delays with clear timelines for different investment types, promoting transparency and trust. Compliance is mandatory as per SEBI Circular dated November 25, 2022, and referenced SEBI Circulars dated May 19, 2000, and November 24, 2000.",
+    "page_numbers": "328",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Unclaimed Amounts Disclosure",
+    "checklist_description": "Mutual funds must disclose in the Scheme Information Document and Statement of Additional Information the unclaimed redemption and dividend amounts, along with the number of such investors for each scheme, annually in the fund's Annual Report. The disclosure should include details like the names and addresses of investors in whose folios there are unclaimed amounts on both AMC and AMFI websites.",
+    "rationale": "Aims to empower investors by making them aware of unclaimed funds and ensures transparency in the management and distribution of these amounts, contributing to investor education efforts by redirecting funds as needed.",
+    "page_numbers": "329-331",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Dematerialization Option Disclosure",
+    "checklist_description": "Mutual funds must allow for the holding of units in dematerialized form by providing an option to investors to mention demat account details in subscription forms. AMCs should obtain ISIN for each scheme option and mention it in all Statement of Accounts. If units are held in the dematerialized form, a demat statement given by depository participants is deemed sufficient compliance for account statement requirements.",
+    "rationale": "Facilitates flexible investment holding methods for investors, ensuring ease of settlement and transparency in unit holdings.",
+    "page_numbers": "332",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Consolidated Account Statement Content Disclosure",
+    "checklist_description": "The half-yearly consolidated account statement must disclose the total purchase value/cost of investment, actual commission paid by AMCs to distributors, and the scheme\u2019s average Total Expense Ratio including a detailed break-up. The CAS should be issued within a specified time after each half-yearly period.",
+    "rationale": "Increases transparency and clarity about investments and costs associated with mutual funds, enabling investors to make informed decisions.",
+    "page_numbers": "333-334",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Transferability of Mutual Fund Units Disclosure",
+    "checklist_description": "Mutual funds must allow the transferability of units held in demat form, unless restricted by scheme-specific rules, such as ELSS lock-in periods. This should be clarified by an addendum explicitly stating the terms of transferability for mutual fund units held in dematerialized form.",
+    "rationale": "Promotes liquidity and flexibility for investors holding mutual fund units, supporting easier transactions and fund management within legal and regulatory provisions.",
+    "page_numbers": "334-335",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Disclosure of Instant Access Facility (IAF) Details",
+    "checklist_description": "Mutual Funds/Asset Management Companies (AMCs) must disclose information about the availability of the Instant Access Facility (IAF) in scheme-related documents. They must also specifically state the scenarios under which IAF could be suspended and clarify that in such cases, the redemption request will be processed as a normal request.",
+    "rationale": "The disclosure is intended to ensure transparency about the conditions of IAF and prevent mis-selling. By informing investors about potential suspension scenarios, AMCs aim to manage investor expectations effectively and maintain trust in the facility and the fund's procedures.",
+    "page_numbers": "Page 339",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Mandatory Bank Account Disclosure",
+    "checklist_description": "AMCs are required to ensure that investors are informed about the mandatory requirement of mentioning their bank account number on applications and redemption requests. Forms should be appropriately designed to include space for this information.",
+    "rationale": "This requirement is stated to streamline the redemption process and to provide a direct link between the investor's mutual fund dealings and their bank account, reducing the risk of fraud and ensuring legal compliance.",
+    "page_numbers": "Page 342",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "checklist_title": "Investor Education in Regional Languages",
+    "checklist_description": "AMCs must produce and distribute printed informational material on mutual funds in regional languages to enhance investor education and awareness. These should be made available both in print and via awareness campaigns in regional languages across different media platforms.",
+    "rationale": "The rationale is to promote financial inclusion ensuring that all potential investors, regardless of their primary language, have access to information that can help them understand mutual fund offerings and make informed investment decisions.",
+    "page_numbers": "Page 344",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  }
+]
