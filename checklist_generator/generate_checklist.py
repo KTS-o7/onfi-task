@@ -14,7 +14,14 @@ import logging
 
 # Import local modules
 from pdf_processor import process_pdf_in_chunks, load_intermediate_results
-from llm_client import extract_requirements_from_text, consolidate_checklist
+from llm_client import (
+    extract_requirements_from_text, 
+    consolidate_checklist,
+    call_openai_with_structure,
+    ChecklistItemsExtract,
+    # call_groq_with_structure,  # Commented out as per request
+    # call_gemini_with_structure  # Commented out as per request
+)
 from models import ChecklistItem, RawExtraction, MutualFundChecklist
 
 # Load environment variables
@@ -30,6 +37,8 @@ FINAL_CHECKLIST_FILE = "mutual_fund_disclosure_checklist.json"
 # Suppress pdfminer warnings
 logging.getLogger('pdfminer').setLevel(logging.ERROR)
 
+# LLM model choice - Only OpenAI is available now
+DEFAULT_LLM = "openai"  # Options reduced to just "openai"
 
 def ensure_output_dir(dir_path: str):
     """Ensure output directory exists"""
@@ -40,7 +49,9 @@ def ensure_output_dir(dir_path: str):
 def process_regulatory_document(
     pdf_path: str, 
     output_dir: str,
-    resume_from_intermediate: bool = True
+    resume_from_intermediate: bool = True,
+    llm_choice: str = DEFAULT_LLM,
+    focus_on_chapters: bool = True
 ) -> List[Dict]:
     """Process regulatory document to extract disclosure requirements"""
     ensure_output_dir(output_dir)
@@ -52,25 +63,28 @@ def process_regulatory_document(
         print(f"Resuming from intermediate results in {intermediate_file_path}")
         return load_intermediate_results(intermediate_file_path)
     
-    # Process PDF in chunks using extract_requirements_from_text
-    return process_pdf_in_chunks(pdf_path, extract_requirements_from_text, focus_on_chapters=True)
+    # Process PDF in chunks using extract_requirements_from_text (which will now only use OpenAI)
+    return process_pdf_in_chunks(pdf_path, extract_requirements_from_text, focus_on_chapters=focus_on_chapters)
 
 
-def batch_consolidate(items: List[Dict], batch_size: int = 20) -> List[Dict]:
+def batch_consolidate(items: List[Dict], batch_size: int = 20, llm_choice: str = DEFAULT_LLM) -> List[Dict]:
     """Consolidate items in smaller batches to avoid token limits"""
     if len(items) <= batch_size:
         # If we have fewer items than batch size, just consolidate directly
-        result = consolidate_checklist({"items": items})
+        # Always use OpenAI now
+        result = consolidate_with_specific_model({"items": items}, "openai")
         return result.get("items", [])
     
     consolidated_items = []
     # Process in batches
     for i in range(0, len(items), batch_size):
         batch = items[i:i+batch_size]
-        print(f"Consolidating batch {i//batch_size + 1} ({len(batch)} items)...")
+        print(f"Consolidating batch {i//batch_size + 1} ({len(batch)} items) using OpenAI...")
         
         try:
-            batch_result = consolidate_checklist({"items": batch})
+            # Always use OpenAI
+            batch_result = consolidate_with_specific_model({"items": batch}, "openai")
+                
             if "items" in batch_result and batch_result["items"]:
                 consolidated_items.extend(batch_result["items"])
         except Exception as e:
@@ -83,14 +97,59 @@ def batch_consolidate(items: List[Dict], batch_size: int = 20) -> List[Dict]:
         print(f"Performing final consolidation on {len(consolidated_items)} items...")
         # Make smaller batches for final consolidation to ensure success
         final_batch_size = batch_size // 2
-        return batch_consolidate(consolidated_items, final_batch_size)
+        return batch_consolidate(consolidated_items, final_batch_size, "openai")
     
     return consolidated_items
 
 
+def consolidate_with_specific_model(raw_extractions: Dict, model_choice: str) -> Dict:
+    """
+    Consolidate checklist using a specific model (only OpenAI now).
+    """
+    system_prompt = """
+    You are an expert in mutual fund regulations and compliance. Your task is to consolidate multiple extracted disclosure requirements into a unified checklist.
+    
+    Remove duplicates, combine similar requirements, and ensure the final list is comprehensive.
+    
+    Structure your response as a valid JSON object with these fields:
+    - items: A list of consolidated requirements, each with:
+      - checklist_title: A short title for the requirement
+      - checklist_description: Detailed description of what needs to be disclosed
+      - rationale: The rationale from the regulatory document
+      - page_numbers: The page numbers in the regulatory document where this requirement is found
+    
+    Format your response ONLY as a valid JSON object.
+    """
+    
+    # Prepare list of extractions for the prompt
+    extractions_text = json.dumps(raw_extractions, indent=2)
+    
+    prompt = f"""
+    Consolidate the following extracted disclosure requirements into a unified checklist.
+    Remove duplicates, combine similar requirements, and ensure the final list is comprehensive.
+    
+    EXTRACTED REQUIREMENTS:
+    {extractions_text}
+    """
+    
+    try:
+        # Only use OpenAI
+        result = call_openai_with_structure(prompt, system_prompt, ChecklistItemsExtract)
+        
+        if result and hasattr(result, 'items'):
+            return result.model_dump()
+        else:
+            print(f"Consolidation with OpenAI failed, returning empty items list")
+            return {"items": []}
+    except Exception as e:
+        print(f"Error in consolidation with OpenAI: {e}")
+        return {"items": []}
+
+
 def create_consolidated_checklist(
     extractions: List[Dict],
-    output_dir: str
+    output_dir: str,
+    llm_choice: str = DEFAULT_LLM
 ) -> MutualFundChecklist:
     """Create consolidated checklist from extractions"""
     # Convert to proper format for consolidation
@@ -129,10 +188,10 @@ def create_consolidated_checklist(
     print(f"Saved raw checklist items to {raw_checklist_path}")
     
     # Now deduplicate and consolidate
-    print("Deduplicating and consolidating checklist items...")
+    print("Deduplicating and consolidating checklist items using OpenAI...")
     
-    # Use batch consolidation for large checklists
-    consolidated_items = batch_consolidate(raw_items)
+    # Use batch consolidation for large checklists with OpenAI
+    consolidated_items = batch_consolidate(raw_items, llm_choice="openai")
     
     # Create new consolidated checklist
     final_checklist = MutualFundChecklist()
@@ -183,16 +242,23 @@ def main():
         action="store_true",
         help="Skip the consolidation step and use raw items directly"
     )
+    parser.add_argument(
+        "--process-entire-pdf",
+        action="store_true",
+        help="Process the entire PDF instead of focusing on specific chapters"
+    )
+    # Removed model choice as we're only using OpenAI now
     
     args = parser.parse_args()
     
     start_time = time.time()
     
-    print(f"Processing {args.pdf} to extract disclosure requirements")
+    print(f"Processing {args.pdf} to extract disclosure requirements using OpenAI model")
     extractions = process_regulatory_document(
         args.pdf, 
         args.output,
-        resume_from_intermediate=not args.no_resume
+        resume_from_intermediate=not args.no_resume,
+        focus_on_chapters=not args.process_entire_pdf
     )
     
     if args.skip_consolidation:
