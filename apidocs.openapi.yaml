@@ -1,0 +1,339 @@
+openapi: 3.0.0
+info:
+  title: SEBI Compliance Checker API
+  description: API for processing and evaluating SEBI master circulars and SID documents
+  version: 1.0.0
+  contact:
+    name: API Support
+    email: support@example.com
+
+servers:
+  - url: http://localhost:5000
+    description: Local development server
+
+paths:
+  /api/health:
+    get:
+      summary: Health check endpoint
+      description: Returns the health status of the API
+      responses:
+        "200":
+          description: API is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "healthy"
+                  timestamp:
+                    type: string
+                    format: date-time
+                    example: "2024-03-20T10:30:00Z"
+
+  /api/upload/master-circular:
+    post:
+      summary: Upload master circular PDF
+      description: Upload a SEBI master circular PDF to generate a checklist
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: PDF file of the master circular
+      responses:
+        "200":
+          description: File uploaded successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  task_id:
+                    type: string
+                    format: uuid
+                  status:
+                    type: string
+                    example: "queued"
+                  message:
+                    type: string
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /api/upload/sid-document:
+    post:
+      summary: Upload SID document
+      description: Upload a Scheme Information Document (SID) for compliance evaluation
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: PDF file of the SID document
+      responses:
+        "200":
+          description: File uploaded successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  task_id:
+                    type: string
+                    format: uuid
+                  status:
+                    type: string
+                    example: "queued"
+                  message:
+                    type: string
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /api/tasks/{task_id}:
+    get:
+      summary: Get task status
+      description: Check the status of a processing task
+      parameters:
+        - name: task_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        "200":
+          description: Task status retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  task_id:
+                    type: string
+                    format: uuid
+                  type:
+                    type: string
+                  status:
+                    type: string
+                  created_at:
+                    type: string
+                    format: date-time
+                  progress:
+                    type: number
+                    format: float
+                  result:
+                    type: object
+                  error:
+                    type: string
+        "404":
+          description: Task not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /api/checklist:
+    get:
+      summary: Get generated checklist
+      description: Retrieve the checklist generated from the master circular
+      responses:
+        "200":
+          description: Checklist retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  checklist:
+                    type: array
+                    items:
+                      type: object
+        "404":
+          description: No checklist available
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /api/documents:
+    get:
+      summary: Get processed documents
+      description: Retrieve a list of processed documents in the database
+      responses:
+        "200":
+          description: Documents retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  documents:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        doc_id:
+                          type: string
+                        title:
+                          type: string
+                        page_count:
+                          type: integer
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /api/evaluate-checklist/{doc_id}:
+    get:
+      summary: Evaluate document with ID
+      description: Evaluate a specific document against the checklist
+      parameters:
+        - name: doc_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Evaluation started successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  task_id:
+                    type: string
+                    format: uuid
+                  status:
+                    type: string
+                    example: "queued"
+                  message:
+                    type: string
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        "404":
+          description: Document not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        "500":
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /api/clear-tasks:
+    post:
+      summary: Clear completed tasks
+      description: Remove completed or failed tasks from the system
+      responses:
+        "200":
+          description: Tasks cleared successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  cleared_count:
+                    type: integer
+
+components:
+  schemas:
+    ChecklistItem:
+      type: object
+      properties:
+        content:
+          type: object
+          properties:
+            checklist_title:
+              type: string
+            checklist_description:
+              type: string
+            rationale:
+              type: string
+        page_numbers:
+          type: string
+        source_document:
+          type: string
+
+    ComplianceReport:
+      type: object
+      properties:
+        report_items:
+          type: array
+          items:
+            type: object
+            properties:
+              compliance_requirement:
+                type: string
+              source:
+                type: string
+              compliance_status:
+                type: string
+              findings_summary:
+                type: string
+              findings_citations:
+                type: array
+                items:
+                  type: string
+        compliant_count:
+          type: integer
+        non_compliant_count:
+          type: integer
+        partial_compliant_count:
+          type: integer
+        unknown_count:
+          type: integer

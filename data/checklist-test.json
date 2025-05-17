@@ -1,0 +1,272 @@
+[
+  {
+    "content": {
+      "checklist_title": "Investment Objectives",
+      "checklist_description": "The SID must clearly state the investment objectives of the mutual fund scheme, detailing the type of securities in which the scheme will invest and the investment strategy to be adopted.",
+      "rationale": "This disclosure ensures that investors understand the purpose of the scheme and can assess whether it aligns with their investment goals."
+    },
+    "page_numbers": "Page 1",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Risk Factors",
+      "checklist_description": "The SID must include a comprehensive list of risk factors associated with the scheme, including market risk, credit risk, liquidity risk, and any specific risks related to the investment strategy.",
+      "rationale": "Disclosing risk factors is essential for informing investors about the potential risks involved in their investment, enabling them to make informed decisions."
+    },
+    "page_numbers": "Page 1",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Performance History",
+      "checklist_description": "The SID should provide the past performance of the scheme, including returns over various time periods, and a comparison with relevant benchmark indices.",
+      "rationale": "This information helps investors evaluate the historical performance of the scheme and its ability to meet its investment objectives."
+    },
+    "page_numbers": "Page 1",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Expense Ratio",
+      "checklist_description": "The SID must disclose the total expense ratio (TER) of the scheme, including details of various fees and charges applicable to the investors.",
+      "rationale": "Transparency regarding expenses is crucial for investors to understand the costs associated with their investment and how it may affect their returns."
+    },
+    "page_numbers": "Page 1",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Investment Restrictions",
+      "checklist_description": "The SID must outline any investment restrictions applicable to the scheme, including limits on exposure to certain sectors, types of securities, or geographical regions.",
+      "rationale": "Disclosing investment restrictions helps investors understand the boundaries within which the fund manager operates, ensuring alignment with their risk appetite."
+    },
+    "page_numbers": "Page 1",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Liquidity and Redemption",
+      "checklist_description": "The SID should specify the liquidity provisions of the scheme, including the frequency of redemption and any applicable exit loads or penalties.",
+      "rationale": "This disclosure is important for investors to know how easily they can access their funds and any costs associated with redeeming their investments."
+    },
+    "page_numbers": "Page 1",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Taxation Details",
+      "checklist_description": "The SID must provide information on the tax implications of investing in the scheme, including capital gains tax and any other relevant tax considerations.",
+      "rationale": "Understanding the tax implications is vital for investors to assess the net returns on their investments and plan accordingly."
+    },
+    "page_numbers": "Page 1",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Fund Manager Information",
+      "checklist_description": "The SID should include details about the fund manager(s) responsible for managing the scheme, including their qualifications, experience, and track record.",
+      "rationale": "This information helps investors evaluate the expertise and credibility of the fund management team, which can influence their investment decisions."
+    },
+    "page_numbers": "Page 1",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Investment Strategy",
+      "checklist_description": "The SID must describe the investment strategy of the scheme, including the approach to asset allocation, security selection, and any specific investment techniques employed.",
+      "rationale": "A clear description of the investment strategy allows investors to understand how their money will be managed and the rationale behind investment decisions."
+    },
+    "page_numbers": "Page 1",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Investment Objectives",
+      "checklist_description": "The SID must clearly outline the investment objectives of the mutual fund scheme, detailing the type of securities in which the scheme intends to invest and the investment strategy to be employed.",
+      "rationale": "This disclosure helps investors understand the purpose of the scheme and whether it aligns with their investment goals."
+    },
+    "page_numbers": "Page 4",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Risk Factors",
+      "checklist_description": "The SID must include a comprehensive list of risk factors associated with the scheme, including market risk, credit risk, interest rate risk, and any other specific risks related to the investment strategy.",
+      "rationale": "Informing investors about potential risks is essential for making informed investment decisions."
+    },
+    "page_numbers": "Page 4",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Fees and Expenses",
+      "checklist_description": "The SID must disclose all fees and expenses associated with the scheme, including management fees, performance fees, and any other charges that may be levied on the investor.",
+      "rationale": "Transparency regarding fees ensures that investors are aware of the costs involved in investing in the scheme."
+    },
+    "page_numbers": "Page 4",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Past Performance",
+      "checklist_description": "The SID should provide details of the past performance of the scheme, including returns over various time periods, and a comparison with relevant benchmarks.",
+      "rationale": "Past performance can provide insights into the scheme's historical returns and help investors gauge its potential future performance."
+    },
+    "page_numbers": "Page 4",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Investment Restrictions",
+      "checklist_description": "The SID must specify any restrictions on investments, including limits on exposure to certain sectors, types of securities, or geographical regions.",
+      "rationale": "Disclosing investment restrictions helps investors understand the boundaries within which the fund operates."
+    },
+    "page_numbers": "Page 4",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Dividend Policy",
+      "checklist_description": "The SID must outline the scheme's dividend policy, including how and when dividends will be declared and paid to investors.",
+      "rationale": "Clear communication of the dividend policy allows investors to set expectations regarding income from their investments."
+    },
+    "page_numbers": "Page 4",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Redemption Process",
+      "checklist_description": "The SID should detail the process for redeeming units of the scheme, including any applicable notice periods, redemption fees, and the timeline for processing redemptions.",
+      "rationale": "Understanding the redemption process is crucial for investors to manage their liquidity needs effectively."
+    },
+    "page_numbers": "Page 4",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Fund Manager Details",
+      "checklist_description": "The SID must provide information about the fund manager(s), including their qualifications, experience, and track record in managing similar schemes.",
+      "rationale": "Investors need to know who is managing their money and their expertise in the field."
+    },
+    "page_numbers": "Page 4",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Tax Implications",
+      "checklist_description": "The SID should disclose the tax implications of investing in the scheme, including capital gains tax, dividend distribution tax, and any other relevant tax considerations.",
+      "rationale": "Tax implications can significantly affect the net returns for investors, making this information vital for decision-making."
+    },
+    "page_numbers": "Page 4",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Investment Objectives",
+      "checklist_description": "The SID must clearly state the investment objectives of the mutual fund scheme, outlining the primary goals and the types of securities in which the scheme will invest.",
+      "rationale": "This disclosure helps investors understand the purpose of the scheme and whether it aligns with their investment goals."
+    },
+    "page_numbers": "Page 5",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Risk Factors",
+      "checklist_description": "The SID should include a comprehensive list of risk factors associated with the scheme, including market risk, credit risk, interest rate risk, and liquidity risk.",
+      "rationale": "Investors need to be aware of the risks involved in order to make informed investment decisions."
+    },
+    "page_numbers": "Page 5",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Asset Allocation",
+      "checklist_description": "The SID must provide details on the asset allocation strategy of the scheme, including the percentage of assets that will be allocated to various asset classes such as equity, debt, and cash.",
+      "rationale": "This information is crucial for investors to understand how their money will be invested and the potential for returns."
+    },
+    "page_numbers": "Page 5",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Expense Ratio",
+      "checklist_description": "The SID should disclose the total expense ratio (TER) of the scheme, including management fees, administrative expenses, and any other costs that will be charged to the investors.",
+      "rationale": "Transparency regarding fees is essential for investors to assess the cost-effectiveness of the scheme."
+    },
+    "page_numbers": "Page 5",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Past Performance",
+      "checklist_description": "The SID must include the past performance of the scheme, if applicable, along with the performance of the benchmark index over the same period.",
+      "rationale": "Past performance can provide insights into the scheme's historical returns and help investors gauge its potential future performance."
+    },
+    "page_numbers": "Page 5",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Minimum Investment Amount",
+      "checklist_description": "The SID should specify the minimum investment amount required to invest in the scheme, including any minimum additional investment amounts.",
+      "rationale": "This information is necessary for investors to understand the financial commitment required to participate in the scheme."
+    },
+    "page_numbers": "Page 5",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Redemption Process",
+      "checklist_description": "The SID must outline the process for redeeming units of the scheme, including the time frame for processing redemptions and any applicable exit loads.",
+      "rationale": "Clear information on the redemption process ensures that investors know how and when they can access their funds."
+    },
+    "page_numbers": "Page 5",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Tax Implications",
+      "checklist_description": "The SID should provide information on the tax implications of investing in the scheme, including capital gains tax and any other relevant tax considerations.",
+      "rationale": "Understanding tax implications is crucial for investors to evaluate the net returns on their investments."
+    },
+    "page_numbers": "Page 5",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  },
+  {
+    "content": {
+      "checklist_title": "Fund Manager Details",
+      "checklist_description": "The SID must disclose details about the fund manager(s) including their qualifications, experience, and track record in managing similar schemes.",
+      "rationale": "Investors need to assess the expertise of the fund manager to gauge the potential for effective management of the scheme."
+    },
+    "page_numbers": "Page 5",
+    "source_document": "SEBI Master Circular",
+    "category": null
+  }
+]
