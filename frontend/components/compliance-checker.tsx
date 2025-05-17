@@ -101,7 +101,7 @@ export default function ComplianceChecker() {
             if (intervalId) clearInterval(intervalId);
           }
         }
-      }, 2000); // Check every 2 seconds
+      }, 5000); // Check every 5 seconds
     }
 
     return () => {

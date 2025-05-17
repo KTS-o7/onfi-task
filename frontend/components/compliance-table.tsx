@@ -83,6 +83,7 @@ export default function ComplianceTable({
             <TableRow>
               <TableHead className="w-[250px] whitespace-normal">Compliance Requirement</TableHead>
               <TableHead className="w-[200px] whitespace-normal">Source</TableHead>
+              <TableHead className="w-[300px] whitespace-normal">Rationale</TableHead>
               <TableHead className="w-[150px] whitespace-normal">Status</TableHead>
               <TableHead className="w-[250px] whitespace-normal">Findings Summary</TableHead>
               <TableHead className="w-[200px] whitespace-normal">Findings Citations</TableHead>
@@ -92,7 +93,7 @@ export default function ComplianceTable({
             {isLoading ? (
               Array.from({ length: 5 }).map((_, index) => (
                 <TableRow key={index}>
-                  {Array.from({ length: 5 }).map((_, cellIndex) => (
+                  {Array.from({ length: 6 }).map((_, cellIndex) => (
                     <TableCell key={cellIndex}>
                       <Skeleton className="h-6 w-full" />
                     </TableCell>
@@ -119,6 +120,7 @@ export default function ComplianceTable({
                       {item.source}
                     </span>
                   </TableCell>
+                  <TableCell className="whitespace-normal break-words">{item.rationale}</TableCell>
                   <TableCell className="whitespace-normal">{getStatusBadge(item.status)}</TableCell>
                   <TableCell className="whitespace-normal break-words">{item.summary}</TableCell>
                   <TableCell className="whitespace-normal">
@@ -145,7 +147,7 @@ export default function ComplianceTable({
               ))
             ) : (
               <TableRow>
-                <TableCell colSpan={5} className="h-24 text-center">
+                <TableCell colSpan={6} className="h-24 text-center">
                   {data === null ? "Upload a PDF to view compliance data" : "No results found"}
                 </TableCell>
               </TableRow>

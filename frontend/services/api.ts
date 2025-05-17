@@ -16,6 +16,7 @@ export type TaskStatus = {
 export type ComplianceReportItem = {
   compliance_requirement: string;
   source: string;
+  rationale: string;
   compliance_status: string;
   findings_summary: string;
   findings_citations: number[];
@@ -85,6 +86,7 @@ export async function mapBackendToFrontendData(
   return complianceData.map((item) => ({
     requirement: item.compliance_requirement,
     source: item.source,
+    rationale: item.rationale,
     status: item.compliance_status,
     summary: item.findings_summary,
     citations: item.findings_citations,
